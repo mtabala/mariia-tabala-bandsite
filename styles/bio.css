@@ -440,7 +440,7 @@
   display: flex;
   justify-content: space-between;
   width: 20%;
-  padding-bottom: 1rem;
+  padding-bottom: 0.3rem;
 }
 @media (min-width: 768px) {
   .footer__social {
@@ -456,12 +456,12 @@
   }
 }
 .footer__social-logo {
-  height: 80%;
-  padding-right: 1rem;
+  padding-right: 1.5rem;
+  margin-top: 0.5rem;
 }
 @media (min-width: 768px) {
   .footer__social-logo {
-    margin-right: 1rem;
+    margin: 0rem 1rem 0rem 0rem;
   }
 }
 .footer__information {
@@ -506,9 +506,6 @@
   font-size: 1rem;
   letter-spacing: 0.1rem;
 }
-.footer__logo {
-  margin-top: 1rem;
-}
 .footer__logo--tablet {
   display: none;
 }
@@ -516,7 +513,6 @@
   .footer__logo--tablet {
     display: flex;
     justify-content: flex-end;
-    margin-top: 0.4rem;
     width: 33%;
   }
   .footer__logo--mobile {
