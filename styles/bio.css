@@ -374,7 +374,7 @@
   flex: 1;
   height: auto;
   padding: 0.4rem 1rem;
-  transition: transform 0.35s;
+  transition: transform 0.3s;
   filter: grayscale(100%);
 }
 .gallery__img:hover {
@@ -485,7 +485,7 @@
   }
 }
 .footer__names, .footer__text, .footer__contact {
-  padding-bottom: 1rem;
+  padding: 0.7rem 0rem;
 }
 .footer__name, .footer__title {
   font-size: 0.9rem;
