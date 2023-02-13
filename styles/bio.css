@@ -487,6 +487,9 @@
 .footer__names, .footer__text, .footer__contact {
   padding: 0.7rem 0rem;
 }
+.footer__name {
+  margin-top: 0.5rem;
+}
 .footer__name, .footer__title {
   font-size: 0.9rem;
   font-weight: 600;

@@ -378,6 +378,9 @@
     &__names, &__text, &__contact {
         padding:0.7rem 0rem;
     }
+    &__name {
+        margin-top:0.5rem;
+    }
     &__name, &__title {
         font-size:0.9rem;
         font-weight:600;
