@@ -138,3 +138,128 @@
         }
     } 
 }
+/* Footer */
+.footer {
+    background-color: $heading-primary;
+    color:$font-primary;
+    padding:1rem;
+    &__container {
+        @include tablet {
+            display:flex;
+            align-items:center;
+            gap:1.3rem;
+        }
+    }
+    &__header {
+        @include mobile-header {
+            padding: 1rem 0rem;
+        }
+        @include tablet {
+            width:33%;
+            @include desktop-section-header;     
+        }
+        @include desktop {
+            width:25%;
+        }
+    }
+    &__social {
+        display:flex;
+        justify-content: space-between;
+        width:20%;
+        padding-bottom:0.3rem;
+        @include tablet {
+            width:33%;
+            justify-content: flex-start;
+            padding:0;
+            margin-top:0.4rem;
+        }
+        @include desktop {
+            width:25%;
+        }
+    }
+    &__social-logo {
+        padding-right:1.5rem;
+        margin-top:0.5rem;
+        @include tablet {
+            margin:0rem 1rem 0rem 0rem;
+        }
+    }
+    &__information {
+        width:80%;
+        @include tablet {
+            display:flex;
+            width: 100%;
+            gap:1.3rem;
+        }
+    }
+    &__wrapper {
+        @include tablet {
+            width:33%;
+        }
+        @include desktop {
+            width:25%;
+        }
+    }
+    &__names, &__text, &__contact {
+        padding:0.7rem 0rem;
+    }
+    &__name {
+        margin-top:0.5rem;
+    }
+    &__name, &__title {
+        font-size:0.9rem;
+        font-weight:600;
+    }
+    &__contact, &__subtitle {
+        font-size:0.88rem;
+    }
+    &__contact {
+        color:$background-secondary;
+        &:hover {
+            transition: 0.3s;
+            font-weight:bold;
+            font-size:1rem;
+            letter-spacing:0.1rem;
+        }
+    }
+    &__logo {              
+        &--tablet {
+            display:none;
+        }
+        @include tablet {
+            &--tablet {
+                display:flex;
+                justify-content: flex-end;
+                width: 33%;
+            }
+            &--mobile {
+                display:none;
+                margin:0;
+            }
+        }
+        @include desktop {
+            width:45%;
+        }
+    }
+    &__logo-img {
+        margin-top:3rem;
+        width:120px;
+        @include tablet {
+            margin:0;
+        }
+    }
+    &__copyright {
+        font-size:11px;
+        padding:1rem 0rem;
+        @include tablet {
+            margin-top:1rem;
+            font-weight:600;
+        }
+    }
+    @include tablet {
+        padding:1rem 2.25rem;
+    }
+    @include desktop {
+        padding:1rem 7rem;
+    }
+}
