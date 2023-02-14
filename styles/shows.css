@@ -26,4 +26,147 @@
   margin: 0;
   padding: 0;
   font-family: "AvenirNext LT Pro";
+}
+
+/* Header and Navbar */
+.header {
+  background-color: #323232;
+  color: #FFFFFF;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    gap: 4rem;
+    padding: 0rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .header {
+    padding: 0rem 7rem;
+    gap: 3.5rem;
+  }
+}
+.header__logo-img {
+  padding: 1rem 0rem 0.5rem;
+  width: 7.5rem;
+}
+@media (min-width: 768px) {
+  .header__logo-img {
+    padding: 1.5rem 0rem;
+  }
+}
+
+.navbar {
+  font-size: 0.87rem;
+  /* Tablet and Desktop - Buttons Animation */
+}
+@media (min-width: 768px) {
+  .navbar {
+    display: flex;
+    align-items: end;
+  }
+}
+.navbar__list {
+  display: flex;
+}
+@media (min-width: 768px) {
+  .navbar__list {
+    gap: 3.5rem;
+  }
+}
+.navbar__item {
+  font-size: 0.812rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  width: 100%;
+}
+.navbar__link {
+  position: relative;
+  display: inline-block;
+  color: #FAFAFA;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .navbar__link {
+    padding: 1.5rem;
+  }
+}
+.navbar__link--active {
+  padding-bottom: 0.5rem;
+  border-bottom: 0.1rem solid #FFFFFF;
+}
+@media (min-width: 768px) {
+  .navbar__link--active {
+    padding-bottom: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .navbar a:hover {
+    font-weight: 700;
+    color: #FFFFFF;
+    padding: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    transition: 0.05s linear;
+  }
+  .navbar a span {
+    position: absolute;
+    display: block;
+    background-blend-mode: darken;
+    background-color: #E1E1E1;
+    transition: transform ease-in-out 0.3s;
+  }
+  .navbar a span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0.06rem;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition-delay: 0s;
+  }
+  .navbar a:hover span:nth-child(1) {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  .navbar a span:nth-child(3) {
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.06rem;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition-delay: 0.3s;
+  }
+  .navbar a:hover span:nth-child(3) {
+    transform: scaleX(1);
+    transform-origin: right;
+  }
+  .navbar a span:nth-child(2) {
+    top: 0;
+    right: 0;
+    width: 0.06rem;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition-delay: 0.2s;
+  }
+  .navbar a:hover span:nth-child(2) {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  .navbar a span:nth-child(4) {
+    top: 0;
+    left: 0;
+    width: 0.06rem;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition-delay: 0.5s;
+  }
+  .navbar a:hover span:nth-child(4) {
+    transform: scaleY(1);
+    transform-origin: bottom;
+  }
 }/*# sourceMappingURL=shows.css.map */
