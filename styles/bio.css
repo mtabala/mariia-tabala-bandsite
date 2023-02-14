@@ -171,6 +171,18 @@
   }
 }
 
+/* Hero Section */
+.hero {
+  background-size: cover;
+  background-position-y: 30%;
+  background-blend-mode: darken;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  opacity: 90%;
+  aspect-ratio: 16/9;
+  padding: 0rem 1rem;
+}
+
 /* Footer */
 .footer {
   background-color: #323232;
@@ -327,15 +339,6 @@
   display: flex;
   align-items: center;
   background-image: url(../assets/images/hero-bio.jpg);
-  background-size: cover;
-  background-position: center;
-  background-blend-mode: darken;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  opacity: 90%;
-  aspect-ratio: 16/9;
-  max-height: 50vh;
-  padding: 0rem 1rem;
 }
 .hero__header {
   color: #FFFFFF;
