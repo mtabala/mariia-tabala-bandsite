@@ -409,4 +409,132 @@
     padding: 0rem 7rem;
     max-height: 100vh;
   }
+}
+
+.shows {
+  padding: 1rem 0rem;
+}
+@media (min-width: 768px) {
+  .shows {
+    padding: 2rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows {
+    padding: 3rem 7rem 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 9rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__table {
+    flex-grow: 1;
+  }
+}
+.shows__header {
+  padding: 1rem 1rem;
+}
+@media (min-width: 768px) {
+  .shows__header {
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    font-weight: 600;
+    padding-bottom: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__header {
+    padding: 0;
+  }
+}
+.shows__subheaders {
+  display: none;
+}
+@media (min-width: 768px) {
+  .shows__subheaders {
+    display: flex;
+    padding: 0rem 1rem;
+  }
+}
+.shows__item {
+  padding: 1rem 1rem;
+  border-bottom: 2px solid #E1E1E1;
+}
+.shows__item:hover {
+  background-color: #FAFAFA;
+}
+.shows__item:checked {
+  background-color: #E1E1E1;
+}
+@media (min-width: 768px) {
+  .shows__item {
+    display: flex;
+  }
+}
+.shows__item-wrap {
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .shows__item-wrap {
+    flex: 1;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__item-wrap {
+    display: Flex;
+    margin: 0;
+    align-items: center;
+  }
+}
+.shows__subheader {
+  color: #AFAFAF;
+  font-size: 0.66rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+  .shows__subheader {
+    display: none;
+  }
+  .shows__subheader--invisible {
+    display: flex;
+    flex: 1;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__subheader:first-child {
+    flex-grow: 1.3;
+  }
+}
+.shows__text {
+  font-size: 0.87rem;
+}
+.shows__text--date {
+  font-weight: 600;
+  color: #323232;
+}
+.shows__btn {
+  display: flex;
+  justify-content: center;
+  background-color: #323232;
+  color: #FFFFFF;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.8rem 2rem 0.6rem;
+  border-radius: 5px;
+}
+.shows__btn:hover {
+  background-color: #000000;
+}
+@media (min-width: 768px) {
+  .shows__btn--invisible {
+    visibility: hidden;
+    flex: 1;
+  }
 }/*# sourceMappingURL=shows.css.map */

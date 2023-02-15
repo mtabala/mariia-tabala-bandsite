@@ -59,3 +59,112 @@
         max-height: 100vh;
     }
 }
+.shows {
+    padding:1rem 0rem;
+    @include tablet {
+        padding:2rem 2.25rem;
+    }
+    @include desktop {
+        padding:3rem 7rem 2rem;
+    }
+
+    &__container {
+        @include desktop {
+            display:flex;
+            justify-content: space-between;
+            gap:9rem;
+        }
+    }
+    &__table {
+        @include desktop {
+            flex-grow: 1;
+        }
+    }
+    &__header {
+        padding:1rem 1rem;
+        @include tablet {
+            @include desktop-section-header;
+            padding-bottom:2rem;
+        }
+        @include desktop {
+            padding:0;
+        }
+    }
+    &__subheaders {
+        display:none;
+        @include tablet {
+            display:flex;
+            padding:0rem 1rem;
+        }
+    }
+    &__item {
+        padding:1rem 1rem;
+        border-bottom:2px solid $background-primary;
+        &:hover {
+            background-color: $background-secondary;
+        }
+        &:checked {
+            background-color: $background-primary;
+        }
+        @include tablet {
+            display:flex;
+        }
+    }
+    &__item-wrap {
+        margin-bottom:1rem;
+        @include tablet {
+            flex:1;
+        }
+        @include desktop {
+            display:Flex;
+            margin:0;
+            align-items: center;
+        }
+    }
+    &__subheader {
+        color: $font-secondary;
+        font-size:0.66rem;
+        font-weight:600;
+        text-transform: uppercase;
+        margin-bottom:0.5rem;
+
+        @include tablet {
+            display:none;
+            &--invisible {
+                display:flex;
+                flex:1;
+            }
+        }
+        @include desktop {
+            &:first-child {
+                flex-grow: 1.3;
+            }
+        }
+    }
+    &__text {
+        font-size:0.87rem;
+        &--date {
+            font-weight: 600;
+            color:$heading-primary;
+        }
+    }
+    &__btn {
+        display:flex;
+        justify-content: center;
+        background-color:$heading-primary;
+        color:$font-primary;
+        font-weight:600;
+        text-transform: uppercase;
+        padding:0.8rem 2rem 0.6rem;
+        border-radius: 5px;
+        &:hover {
+            background-color: $heading-secondary;
+        }
+        @include tablet {
+            &--invisible {
+                visibility: hidden;
+                flex:1;
+            }
+        }
+    }
+}
