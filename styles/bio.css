@@ -556,4 +556,67 @@
   .gallery {
     padding: 0rem 7rem 2rem;
   }
+}
+
+/* Conversation Section */
+.conversation {
+  padding: 0 1rem 1rem 1rem;
+}
+.conversation__container {
+  padding: 1rem 0rem;
+  border-bottom: 2px solid #E1E1E1;
+}
+.conversation__wrapper {
+  display: flex;
+  gap: 1rem;
+}
+.conversation__header {
+  margin: 1.3rem 0rem 1rem;
+  color: #323232;
+}
+.conversation__image {
+  padding-top: 1.1rem;
+}
+.conversation__img {
+  width: 36px;
+  height: 36px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 30% 60%;
+     object-position: 30% 60%;
+  border-radius: 50%;
+}
+.conversation__inputs {
+  display: flex;
+  flex-direction: column;
+}
+.conversation__title {
+  color: #AFAFAF;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.conversation__input {
+  color: #323232;
+  background-color: #FAFAFA;
+  height: 2rem;
+  width: 14.6rem;
+  padding: 0.75rem;
+  border: 0.06rem solid #E1E1E1;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+.conversation__input--comment {
+  height: 7rem;
+}
+.conversation__btn {
+  display: flex;
+  justify-content: center;
+  background-color: #323232;
+  color: #FFFFFF;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 0.8rem 2rem 0.6rem;
+  border-radius: 5px;
 }/*# sourceMappingURL=bio.css.map */
