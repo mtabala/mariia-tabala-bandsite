@@ -60,3 +60,57 @@ const showsInfo = [
     button: "Buy Tickets"
     },
 ]
+//open the UL shows list from HTML in JS
+const showsList = document.getElementById("shows__list"); 
+// function createList (list)
+function createList (list) {
+    const showsLi = document.createElement ("li");
+    showsLi.classList.add("shows__item");
+
+    const showsDiv = document.createElement ("div");
+	showsDiv.classList.add ("shows__content");
+
+    const showsSubheader1 = document.createElement ("p");
+	showsSubheader1.classList.add ("shows__subheader")
+	showsSubheader1.innerText = list.subheader1;
+
+    const showsDate = document.createElement ("p");
+	showsDate.classList.add ("shows__text");
+	showsDate.classList.add ("shows__text--date");
+	showsDate.innerText = list.date;
+
+    const showsSubheader2 = document.createElement ("p");
+	showsSubheader2.classList.add ("shows__subheader")
+	showsSubheader2.innerText = list.subheader2;
+
+    const showsVenue = document.createElement ("p");
+	showsVenue.classList.add ("shows__subheader");
+	showsVenue.innerText = list.venue;
+
+    const showsSubheader3 = document.createElement ("p");
+	showsSubheader3.classList.add ("shows__subheader")
+	showsSubheader3.innerText = list.subheader3;
+
+    const showsLocation = document.createElement ("p");
+	showsLocation.classList.add ("shows__subheader");
+	showsLocation.innerText = list.location;
+
+    const showsButton = document.createElement ("a");
+	showsButton.classList.add ("shows__button");
+	showsButton.innerText = list.button;
+
+    // append created elements to ul
+    showsDiv.appendChild(showsSubheader1);
+    showsDiv.appendChild(showsDate);
+    showsDiv.appendChild(showsSubheader2);
+    showsDiv.appendChild(showsVenue);
+    showsDiv.appendChild(showsSubheader3);
+    showsDiv.appendChild(showsLocation);
+    showsDiv.appendChild(showsButton);
+    showsList.appendChild(showsLi);
+    showsLi.appendChild(showsDiv);
+}
+
+for (let i = 0; i < showsInfo.length; i++) {
+    createList(showsInfo[i]);
+  }
