@@ -84,7 +84,7 @@
         padding:1rem 1rem;
         @include tablet {
             @include desktop-section-header;
-            padding-bottom:2rem;
+            padding-bottom:1rem;
         }
         @include desktop {
             padding:0;
@@ -95,6 +95,7 @@
         @include tablet {
             display:flex;
             padding:0rem 1rem;
+            margin:1rem 0rem;
         }
     }
     &__item {
@@ -150,6 +151,12 @@
         }
         @include tablet {
             flex:1;
+        }
+        @include desktop {
+            font-weight:400;
+            &--date {
+                font-weight:600;
+            }
         }
     }
     &__btn {
