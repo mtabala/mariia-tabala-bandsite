@@ -18,3 +18,7 @@ const commentsArr = [
     comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
     },    
 ]
+// loop through each object in the array 
+for (let i = 0; i < commentsArr.length; i++) {
+    createComment(commentsArr[i]);
+}
