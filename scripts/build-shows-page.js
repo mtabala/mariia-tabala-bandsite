@@ -1,4 +1,4 @@
-// create an array for the shows
+// create an array with objects
 const showsInfo = [
     {
     subheader1: "date",
@@ -60,12 +60,12 @@ const showsInfo = [
     button: "Buy Tickets"
     },
 ]
-//open the UL shows list from HTML in JS
+//open the UL in JS
 const showsList = document.querySelector(".shows__list"); 
-// function createList (list)
+//create new elements inside the UL
 function createList (list) {
-    const showsLi = document.createElement ("li");
-    showsLi.classList.add("shows__item");
+    const showsItem = document.createElement ("li");
+    showsItem.classList.add("shows__item");
 
     const showsDiv = document.createElement ("div");
 	showsDiv.classList.add ("shows__content");
@@ -99,7 +99,7 @@ function createList (list) {
 	showsButton.classList.add ("shows__button");
 	showsButton.innerText = list.button;
 
-    // append created elements to ul
+// append created elements to ul
     showsDiv.appendChild(showsSubheader1);
     showsDiv.appendChild(showsDate);
     showsDiv.appendChild(showsSubheader2);
@@ -109,20 +109,14 @@ function createList (list) {
     showsDiv.appendChild(showsButton);
     showsLi.appendChild(showsDiv);
     showsList.appendChild(showsLi);
-
-    showsLi.addEventListener ("click", function (event) {
+//add event listener to modify the row when clicked
+    showsItem.addEventListener ("click", function (event) {
         const allShowItems = document.querySelectorAll('.shows__item');
-        allShowItems.forEach(show => show.classList.remove('shows__item--selected'));
-        // for (let i=0; i < allShowItems.length; i++) {
-        //     allShowItems[i].classList.remove("shows__item--selected");
-            
-        // }
+        allShowItems.forEach (show => show.classList.remove ('shows__item--selected'));
         event.currentTarget.classList.add ("shows__item--selected"); 
     });
-
-
 }
-// loop through each object in the showsInfo array 
+// loop through each object in the array 
 for (let i = 0; i < showsInfo.length; i++) {
     createList(showsInfo[i]);
 }

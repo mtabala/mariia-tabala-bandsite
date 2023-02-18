@@ -110,9 +110,6 @@
                 background-color: $background-primary;
             }
         }
-        // &:checked {
-        //     background-color: $background-primary;
-        // }
         @include tablet {
             display:flex;
         }
