@@ -1,4 +1,4 @@
-// create an array for the comments
+// create an array with objects
 const commentsArr = [
     {
     name: "Connor Walton",
@@ -18,22 +18,3 @@ const commentsArr = [
     comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
     },    
 ]
-//open the UL comments list from HTML in JS
-const commentsList = document.querySelector(".conversation__list"); 
-// function createList (list)
-function createList (list) {
-    const commentsLi = document.createElement ("li");
-    commentsLi.classList.add("conversation__item");
-
-    const commentsDivImg = document.createElement ("div");
-	commentsDivImg.classList.add ("conversation__img");
-
-    const commentsDiv = document.createElement ("div");
-	commentsDiv.classList.add ("conversation__comment");
-
-}
-
-// loop through each object in the commentsArr array 
-for (let i = 0; i < commentsArr.length; i++) {
-    createList(commentsArr[i]);
-  }
