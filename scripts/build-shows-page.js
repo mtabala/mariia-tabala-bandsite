@@ -61,7 +61,7 @@ const showsInfo = [
     },
 ]
 //open the UL shows list from HTML in JS
-const showsList = document.getElementById("shows__list"); 
+const showsList = document.querySelector(".shows__list"); 
 // function createList (list)
 function createList (list) {
     const showsLi = document.createElement ("li");
@@ -84,7 +84,7 @@ function createList (list) {
 	showsSubheader2.innerText = list.subheader2;
 
     const showsVenue = document.createElement ("p");
-	showsVenue.classList.add ("shows__subheader");
+	showsVenue.classList.add ("shows__text");
 	showsVenue.innerText = list.venue;
 
     const showsSubheader3 = document.createElement ("p");
@@ -92,7 +92,7 @@ function createList (list) {
 	showsSubheader3.innerText = list.subheader3;
 
     const showsLocation = document.createElement ("p");
-	showsLocation.classList.add ("shows__subheader");
+	showsLocation.classList.add ("shows__text");
 	showsLocation.innerText = list.location;
 
     const showsButton = document.createElement ("a");
@@ -107,10 +107,22 @@ function createList (list) {
     showsDiv.appendChild(showsSubheader3);
     showsDiv.appendChild(showsLocation);
     showsDiv.appendChild(showsButton);
-    showsList.appendChild(showsLi);
     showsLi.appendChild(showsDiv);
-}
+    showsList.appendChild(showsLi);
 
+    showsLi.addEventListener ("click", function (event) {
+        const allShowItems = document.querySelectorAll('.shows__item');
+        allShowItems.forEach(show => show.classList.remove('shows__item--selected'));
+        // for (let i=0; i < allShowItems.length; i++) {
+        //     allShowItems[i].classList.remove("shows__item--selected");
+            
+        // }
+        event.currentTarget.classList.add ("shows__item--selected"); 
+    });
+
+
+}
+// loop through each object in the showsInfo array 
 for (let i = 0; i < showsInfo.length; i++) {
     createList(showsInfo[i]);
-  }
+}

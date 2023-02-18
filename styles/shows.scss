@@ -104,9 +104,15 @@
         &:hover {
             background-color: $background-secondary;
         }
-        &:checked {
+        &--selected {
             background-color: $background-primary;
+            &:hover {
+                background-color: $background-primary;
+            }
         }
+        // &:checked {
+        //     background-color: $background-primary;
+        // }
         @include tablet {
             display:flex;
         }
@@ -143,10 +149,10 @@
     }
     &__text {
         font-size:0.87rem;
-        font-weight: 600;
+        font-weight: 400;
         margin-bottom:0.5rem;
         &--date {
-            font-weight: 700;
+            font-weight: 600;
             color:$heading-primary;
         }
         @include tablet {
@@ -159,7 +165,7 @@
             }
         }
     }
-    &__btn {
+    &__button {
         display:flex;
         justify-content: center;
         background-color:$heading-primary;

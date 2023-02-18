@@ -469,7 +469,10 @@
 .shows__item:hover {
   background-color: #FAFAFA;
 }
-.shows__item:checked {
+.shows__item--selected {
+  background-color: #E1E1E1;
+}
+.shows__item--selected:hover {
   background-color: #E1E1E1;
 }
 @media (min-width: 768px) {
@@ -514,11 +517,11 @@
 }
 .shows__text {
   font-size: 0.87rem;
-  font-weight: 600;
+  font-weight: 400;
   margin-bottom: 0.5rem;
 }
 .shows__text--date {
-  font-weight: 700;
+  font-weight: 600;
   color: #323232;
 }
 @media (min-width: 768px) {
@@ -534,7 +537,7 @@
     font-weight: 600;
   }
 }
-.shows__btn {
+.shows__button {
   display: flex;
   justify-content: center;
   background-color: #323232;
@@ -544,11 +547,11 @@
   padding: 0.8rem 2rem 0.6rem;
   border-radius: 5px;
 }
-.shows__btn:hover {
+.shows__button:hover {
   background-color: #000000;
 }
 @media (min-width: 768px) {
-  .shows__btn--invisible {
+  .shows__button--invisible {
     visibility: hidden;
     width: 160px;
   }

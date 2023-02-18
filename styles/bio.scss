@@ -171,21 +171,36 @@
 /* Conversation Section */
 .conversation {
     padding:0 1rem 1rem 1rem;
-
-    &__container {
-        padding:1rem 0rem;
-        border-bottom:2px solid $background-primary;
+    @include tablet {
+        padding:1rem 0;
     }
-
-    &__wrapper {
-        display:flex;
-        gap:1rem;
+    &__container {
+        @include tablet {
+            padding:0rem 2.25rem;
+        }
+        @include desktop {
+            padding:0rem 7rem;
+        }
     }
     &__header {
         margin:1.3rem 0rem 1rem;
         color:$heading-primary;
+        @include tablet {
+            @include desktop-section-header;
+        }
     }
-
+    &__wrapper {
+        display:flex;
+        gap:1rem;
+        padding:1rem 0rem;
+        border-bottom:2px solid $background-primary;
+        @include tablet {
+            margin:1rem 3rem;
+        }
+        @include desktop {
+            margin:1rem 17rem;
+        }
+    }
     &__image {
         padding-top:1.1rem;
     }
@@ -196,11 +211,18 @@
         object-fit:cover;
         object-position:30% 60%;
         border-radius:50%;
+        background-color: $font-secondary;
     }
 
     &__inputs {
         display:flex;
         flex-direction: column;
+        width:100%;
+        max-width:80%;
+        @include tablet {
+            width:100%;
+            max-width:100%;
+        }
     }
 
     &__title {
@@ -215,14 +237,19 @@
         color:$heading-primary;
         background-color: $background-secondary;
         height:2rem;
-        width:14.6rem;
         padding:0.75rem;
         border:0.06rem solid $background-primary;
         border-radius: 0.25rem;
         margin-bottom:1rem;
+        &::placeholder {
+            color:black;
+        }
 
         &--comment {
             height:7rem;
+        }
+        @include tablet {
+            width:100%;
         }
     }
 
@@ -235,5 +262,45 @@
         text-transform: uppercase;
         padding:0.8rem 2rem 0.6rem;
         border-radius: 5px;
+        &:hover {
+            background-color: $heading-secondary;
+        }
+        @include tablet {
+            margin-left:auto;
+        }
+    }
+// Conversation - List - Comments
+    &__list {
+        @include tablet {
+            padding:0 3rem;
+        }
+        @include desktop {
+            margin:0rem 17rem;
+            padding:0;
+        }
+    }
+    &__item {
+        display: flex;
+        gap: 1rem;
+        padding: 1rem 0rem;
+        border-bottom: 2px solid #E1E1E1;
+    }
+    &__comment {
+        flex:1;
+    }
+    &__comment-header {
+        display:flex;
+        justify-content: space-between;
+        margin-bottom:0.5rem;
+    }
+    &__name {
+        @include mobile-subheader;
+    }
+    &__date {
+        color:$font-secondary;
+        @include mobile-text;
+    }
+    &__comment-text {
+        @include mobile-text;
     }
 }
