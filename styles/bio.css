@@ -279,11 +279,13 @@
 .footer__contact {
   color: #FAFAFA;
 }
-.footer__contact:hover {
-  transition: 0.3s;
-  font-weight: bold;
-  font-size: 1rem;
-  letter-spacing: 0.1rem;
+@media (min-width: 1280px) {
+  .footer__contact:hover {
+    transition: 0.3s;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+  }
 }
 .footer__logo--tablet {
   display: none;

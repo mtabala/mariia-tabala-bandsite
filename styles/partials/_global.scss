@@ -226,11 +226,13 @@
     }
     &__contact {
         color:$background-secondary;
-        &:hover {
-            transition: 0.3s;
-            font-weight:bold;
-            font-size:1rem;
-            letter-spacing:0.1rem;
+        @include desktop {
+            &:hover {
+                transition: 0.3s;
+                font-weight:bold;
+                font-size:1rem;
+                letter-spacing:0.1rem;
+            }
         }
     }
     &__logo {              

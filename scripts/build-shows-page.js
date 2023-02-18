@@ -107,8 +107,8 @@ function createList (list) {
     showsDiv.appendChild(showsSubheader3);
     showsDiv.appendChild(showsLocation);
     showsDiv.appendChild(showsButton);
-    showsLi.appendChild(showsDiv);
-    showsList.appendChild(showsLi);
+    showsItem.appendChild(showsDiv);
+    showsList.appendChild(showsItem);
 //add event listener to modify the row when clicked
     showsItem.addEventListener ("click", function (event) {
         const allShowItems = document.querySelectorAll('.shows__item');
