@@ -18,6 +18,42 @@ const commentsArr = [
     comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
     },    
 ]
+//open the UL comments list in JS
+const commentList = document.querySelector(".conversation__list"); 
+//create new elements inside the UL
+function createComment (comment) {
+    const commentItem = document.createElement("li");
+    commentItem.classList.add("conversation__item");
+
+    const commentDivImg = document.createElement("div");
+    commentDivImg.classList.add("conversation__img");
+
+    const commentDiv1 = document.createElement("div");
+    commentDiv1.classList.add ("conversation__comment");
+
+    const commentDiv2 = document.createElement("div");
+    commentDiv2.classList.add ("conversation__comment-header");
+
+    const commentName = document.createElement("p");
+    commentName.classList.add ("conversation__name");
+    commentName.innerText = comment.name;
+
+    const commentDate = document.createElement("p");
+    commentDate.classList.add ("conversation__date");
+    commentDate.innerText = comment.date;
+
+    const commentText = document.createElement("p");
+    commentText.classList.add ("conversation__comment-text");
+    commentText.innerText = comment.comment;
+// append created elements to ul
+    commentItem.appendChild(commentDivImg);
+    commentDiv2.appendChild(commentName);
+    commentDiv2.appendChild(commentDate);
+    commentDiv1.appendChild(commentDiv2);
+    commentDiv1.appendChild(commentText);
+    commentItem.appendChild(commentDiv1);
+    commentList.appendChild(commentItem);
+}
 // loop through each object in the array 
 for (let i = 0; i < commentsArr.length; i++) {
     createComment(commentsArr[i]);
