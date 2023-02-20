@@ -604,6 +604,7 @@
 @media (min-width: 1280px) {
   .conversation__wrapper {
     margin: 1rem 17rem;
+    justify-content: center;
   }
 }
 .conversation__image {
@@ -619,17 +620,11 @@
   border-radius: 50%;
   background-color: #AFAFAF;
 }
-.conversation__inputs {
+.conversation__form {
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 80%;
-}
-@media (min-width: 768px) {
-  .conversation__inputs {
-    width: 100%;
-    max-width: 100%;
-  }
 }
 .conversation__title {
   color: #AFAFAF;
@@ -670,6 +665,7 @@
   text-transform: uppercase;
   padding: 0.8rem 2rem 0.6rem;
   border-radius: 5px;
+  border: none;
 }
 .conversation__btn:hover {
   background-color: #000000;
@@ -686,7 +682,7 @@
 }
 @media (min-width: 1280px) {
   .conversation__list {
-    margin: 0rem 17rem;
+    margin: 0rem 18.5rem;
     padding: 0;
   }
 }

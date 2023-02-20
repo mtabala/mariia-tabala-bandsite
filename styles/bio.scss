@@ -199,6 +199,7 @@
         }
         @include desktop {
             margin:1rem 17rem;
+            justify-content: center;
         }
     }
     &__image {
@@ -214,15 +215,11 @@
         background-color: $font-secondary;
     }
 
-    &__inputs {
+    &__form {
         display:flex;
         flex-direction: column;
         width:100%;
         max-width:80%;
-        @include tablet {
-            width:100%;
-            max-width:100%;
-        }
     }
 
     &__title {
@@ -262,6 +259,7 @@
         text-transform: uppercase;
         padding:0.8rem 2rem 0.6rem;
         border-radius: 5px;
+        border:none;
         &:hover {
             background-color: $heading-secondary;
         }
@@ -275,7 +273,7 @@
             padding:0 3rem;
         }
         @include desktop {
-            margin:0rem 17rem;
+            margin:0rem 18.5rem;
             padding:0;
         }
     }

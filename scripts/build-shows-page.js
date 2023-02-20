@@ -110,7 +110,7 @@ function createList (list) {
     showsItem.appendChild(showsDiv);
     showsList.appendChild(showsItem);
 //add event listener to modify the row when clicked
-    showsItem.addEventListener ("click", function (event) {
+    showsItem.addEventListener ("click", (event) => {
         const allShowItems = document.querySelectorAll('.shows__item');
         allShowItems.forEach (show => show.classList.remove ('shows__item--selected'));
         event.currentTarget.classList.add ("shows__item--selected"); 
