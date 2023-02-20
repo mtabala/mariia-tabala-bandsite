@@ -18,14 +18,6 @@ const commentsArr = [
     comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
     },    
 ]
-
-function addComment (name, text) {
-    commentsArr.push ({
-        name:name,
-        date:new Date(),
-        text:text,
-    });
-}
 //open the UL comments list in JS
 const commentList = document.querySelector(".conversation__list"); 
 //create new elements inside the UL
@@ -83,20 +75,15 @@ commentForm.addEventListener ("submit", function(event) {
     commentsArr.push(newMessage);
 
     console.log (newMessage.name);
-
+    //loops
     // for (i = 0; i < commentsArr.length; i++) {
     //     const element = commentsArr[i];
     //     console.log (element);
     // }
 
-//
-//     let nameInput = document.getElementById ("name");
-//     let commentInput = document.getElementById("comment");
-//     let name = nameInput.value;
-//     let text = commentInput.value;
-// //
-//     let date = new Date();
-//     let comment = {name:name, date:date, comment:text};
-// //
-//     commentsArr.push(comment);
+    //function renderComments () {
+    //     for (let i = 0; i < 3; i ++) {
+    //         commentsList(commentsArr[i]);
+    //     }
+    // }
 });
