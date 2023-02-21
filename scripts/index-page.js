@@ -24,7 +24,7 @@ const commentsArr = [
 //add even listener to submit the new comment and push it to the array
 commentForm.addEventListener("submit", (event) => {
     event.preventDefault();
-    commentList.innerText = '';
+    commentList.innerText = '';    
 
     const newCommentEntry = {
         name: event.target.name.value,
@@ -32,10 +32,24 @@ commentForm.addEventListener("submit", (event) => {
         date: Date.now()
     }
     commentsArr.push(newCommentEntry);
-    displayComment();
+    
+    //sort comments by date
+    commentsArr.sort((a,b) => new Date (b.date) - new Date (a.date));
+
+    clearComments(commentList);
     event.target.reset(); //clears the form
+
+    for (let i =0; i < 3; i++) {
+        displayComment(commentsArr[i]);
+    }
 });
-//create a function for a better date format (dive deeper dynamic timestamp)
+// create a function to clear comments
+function clearComments (parent) {
+    while (parent.firstChild) {
+        parent.removeChild(parent.firstChild);
+    }
+}
+//use a function for a better date format that uses date object as an input and returns a string aka time that passed since the date up to the current time
 function timeSince(date) {
     const seconds = Math.floor((new Date() - date) / 1000);
     let interval = Math.floor(seconds / 31536000);
@@ -67,11 +81,7 @@ function timeSince(date) {
     return Math.floor(seconds) + " second" + (Math.floor(seconds) === 1 ? "" : "s") + " ago";
   };  
 //create a function that takes in new comment and displays it on the page using DOM
-function displayComment () {
-    //sort comments by date
-    commentsArr.sort((a,b) => new Date (b.date) - new Date (a.date));
-    
-    for (let i =0; i < 3; i++) {
+function displayComment (comment) {    
 
     const commentItem = document.createElement("li");
     commentItem.classList.add("conversation__item");
@@ -87,15 +97,16 @@ function displayComment () {
 
     const commentName = document.createElement("p");
     commentName.classList.add ("conversation__name");
-    commentName.innerText = commentsArr[i].name;
+    commentName.innerText = comment.name;
 
     const commentDate = document.createElement("p");
     commentDate.classList.add ("conversation__date");
-    commentDate.innerText = timeSince(commentsArr[i].date);
+    const dateObj = new Date(comment.date); // create a Date object from the date string for the timeSince function
+    commentDate.innerText = timeSince(dateObj);
 
     const commentText = document.createElement("p");
     commentText.classList.add ("conversation__comment-text");
-    commentText.innerText = commentsArr[i].comment;
+    commentText.innerText = comment.comment;
 // append created elements to ul
     commentItem.appendChild(commentDivImg);
     commentDiv2.appendChild(commentName);
@@ -104,6 +115,8 @@ function displayComment () {
     commentDiv1.appendChild(commentText);
     commentItem.appendChild(commentDiv1);
     commentList.appendChild(commentItem);
-    }
 }
-displayComment();
+
+for (let i =0; i < 3; i++) {
+    displayComment(commentsArr[i]);
+}
