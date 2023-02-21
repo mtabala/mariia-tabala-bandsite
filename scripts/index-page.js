@@ -33,9 +33,42 @@ commentForm.addEventListener("submit", (event) => {
     }
     commentsArr.push(newCommentEntry);
     displayComment();
-    event.target.reset();
+    event.target.reset(); //clears the form
 });
+//create a function for a better date format (dive deeper dynamic timestamp)
+function timeSince(date) {
+    const seconds = Math.floor((new Date() - date) / 1000);
+    let interval = Math.floor(seconds / 31536000);
+  
+    if (interval >= 1) {
+      return interval + " year" + (interval === 1 ? "" : "s") + " ago";
+    }
+  
+    interval = Math.floor(seconds / 2592000);
+    if (interval >= 1) {
+      return interval + " month" + (interval === 1 ? "" : "s") + " ago";
+    }
+  
+    interval = Math.floor(seconds / 86400);
+    if (interval >= 1) {
+      return interval + " day" + (interval === 1 ? "" : "s") + " ago";
+    }
+  
+    interval = Math.floor(seconds / 3600);
+    if (interval >= 1) {
+      return interval + " hour" + (interval === 1 ? "" : "s") + " ago";
+    }
+  
+    interval = Math.floor(seconds / 60);
+    if (interval >= 1) {
+      return interval + " minute" + (interval === 1 ? "" : "s") + " ago";
+    }
+  
+    return Math.floor(seconds) + " second" + (Math.floor(seconds) === 1 ? "" : "s") + " ago";
+  };  
+//create a function that takes in new comment and displays it on the page using DOM
 function displayComment () {
+    //sort comments by date
     commentsArr.sort((a,b) => new Date (b.date) - new Date (a.date));
     
     for (let i =0; i < 3; i++) {
@@ -58,7 +91,7 @@ function displayComment () {
 
     const commentDate = document.createElement("p");
     commentDate.classList.add ("conversation__date");
-    commentDate.innerText = commentsArr[i].date;
+    commentDate.innerText = timeSince(commentsArr[i].date);
 
     const commentText = document.createElement("p");
     commentText.classList.add ("conversation__comment-text");
