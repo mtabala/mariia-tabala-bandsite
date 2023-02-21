@@ -1,4 +1,7 @@
-// create an array with objects
+//get DOM elements to work with 
+const commentList = document.querySelector(".conversation__list"); //open the UL comments list in JS
+const commentForm = document.querySelector (".conversation__form"); //open the form in JS
+// create an array with objects to push to and render to DOM
 const commentsArr = [
     {
     name: "Connor Walton",
@@ -17,11 +20,26 @@ const commentsArr = [
     date: "12/20/2020",    
     comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
     },    
-]
-//open the UL comments list in JS
-const commentList = document.querySelector(".conversation__list"); 
-//create new elements inside the UL
-function createComment (comment) {
+];
+//add even listener to submit the new comment and push it to the array
+commentForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    commentList.innerText = '';
+
+    const newCommentEntry = {
+        name: event.target.name.value,
+        comment: event.target.comment.value,
+        date: Date.now()
+    }
+    commentsArr.push(newCommentEntry);
+    displayComment();
+    event.target.reset();
+});
+function displayComment () {
+    commentsArr.sort((a,b) => new Date (b.date) - new Date (a.date));
+    
+    for (let i =0; i < 3; i++) {
+
     const commentItem = document.createElement("li");
     commentItem.classList.add("conversation__item");
 
@@ -36,15 +54,15 @@ function createComment (comment) {
 
     const commentName = document.createElement("p");
     commentName.classList.add ("conversation__name");
-    commentName.innerText = comment.name;
+    commentName.innerText = commentsArr[i].name;
 
     const commentDate = document.createElement("p");
     commentDate.classList.add ("conversation__date");
-    commentDate.innerText = comment.date;
+    commentDate.innerText = commentsArr[i].date;
 
     const commentText = document.createElement("p");
     commentText.classList.add ("conversation__comment-text");
-    commentText.innerText = comment.comment;
+    commentText.innerText = commentsArr[i].comment;
 // append created elements to ul
     commentItem.appendChild(commentDivImg);
     commentDiv2.appendChild(commentName);
@@ -53,37 +71,6 @@ function createComment (comment) {
     commentDiv1.appendChild(commentText);
     commentItem.appendChild(commentDiv1);
     commentList.appendChild(commentItem);
+    }
 }
-// loop through each object in the array 
-for (let i = 0; i < commentsArr.length; i++) {
-    createComment(commentsArr[i]);
-}
-//open the form in JS
-const commentForm = document.querySelector (".conversation__form");
-console.log (commentForm);
-//add EventListener that submits and prevents page from reloading
-commentForm.addEventListener ("submit", function(event) {
-    event.preventDefault();
-    console.log('click');
-    
-    const newMessage = {}
-
-    newMessage.name = event.target.name.value;
-    newMessage.comment = event.target.comment.value;
-    newMessage.date = new Date ();
-
-    commentsArr.push(newMessage);
-
-    console.log (newMessage.name);
-    //loops
-    // for (i = 0; i < commentsArr.length; i++) {
-    //     const element = commentsArr[i];
-    //     console.log (element);
-    // }
-
-    //function renderComments () {
-    //     for (let i = 0; i < 3; i ++) {
-    //         commentsList(commentsArr[i]);
-    //     }
-    // }
-});
+displayComment();
