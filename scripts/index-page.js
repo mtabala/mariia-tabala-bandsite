@@ -101,7 +101,7 @@ function displayComment (comment) {
     commentItem.appendChild(commentDiv1);
     commentList.appendChild(commentItem);
 }
-
+//use axios to fetch data from the API 
 function getComments () {
     axios
     .get(`${apiURL}/${target}?api_key=${apiKey}`)
