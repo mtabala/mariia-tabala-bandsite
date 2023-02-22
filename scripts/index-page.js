@@ -102,6 +102,19 @@ function displayComment (comment) {
     commentList.appendChild(commentItem);
 }
 
-for (let i =0; i < 3; i++) {
-    displayComment(commentsArr[i]);
+function getComments () {
+    axios
+    .get(`${apiURL}/${target}?api_key=${apiKey}`)
+    .then((response) => {
+        console.log (response);
+        const data = response.data;
+        commentList.innerHTM = "";
+        data.forEach ((comment) => {
+            displayComment(comment);
+        });
+    })
+    .catch((error) => {
+      console.log("error: ", error);
+    });
 }
+getComments ()
