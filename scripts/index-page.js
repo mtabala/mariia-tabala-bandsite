@@ -1,6 +1,9 @@
 //get DOM elements to work with 
 const commentList = document.querySelector(".conversation__list"); //open the UL comments list in JS
 const commentForm = document.querySelector (".conversation__form"); //open the form in JS
+const apiURL = "https://project-1-api.herokuapp.com";
+const apiKey = "6621de2c-5d7f-49e0-ad3e-6ba13f94538c";
+const target = "comments"
 // create an array with objects to push to and render to DOM
 const commentsArr = [
     {
