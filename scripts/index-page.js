@@ -14,7 +14,7 @@ commentForm.addEventListener("submit", (event) => {
     const newCommentEntry = {
         name: event.target.name.value,
         comment: event.target.comment.value,
-        date: Date.now()
+        timestamp: Date.now()
     }
     commentsArr.push(newCommentEntry);
     
@@ -86,7 +86,7 @@ function displayComment (comment) {
 
     const commentDate = document.createElement("p");
     commentDate.classList.add ("conversation__date");
-    const dateObj = new Date(comment.date); // create a Date object from the date string for the timeSince function
+    const dateObj = new Date(comment.timestamp); // create a Date object from the date string for the timeSince function
     commentDate.innerText = timeSince(dateObj);
 
     const commentText = document.createElement("p");
