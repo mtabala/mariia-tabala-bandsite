@@ -720,4 +720,20 @@
   font-size: 0.812rem;
   line-height: 1.125rem;
   font-weight: 400;
+  margin-bottom: 0.5rem;
+}
+.conversation__btn-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+.conversation__button {
+  padding: 0.6rem;
+  border: none;
+  cursor: pointer;
+}
+.conversation__button--like {
+  background: url("../assets/icons/SVG/icon-like.svg") no-repeat center;
+}
+.conversation__button--delete {
+  background: url("../assets/icons/SVG/icon-delete.svg") no-repeat center;
 }/*# sourceMappingURL=bio.css.map */

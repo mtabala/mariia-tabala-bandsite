@@ -62,12 +62,27 @@ function displayComment (comment) {
     const commentText = document.createElement("p");
     commentText.classList.add ("conversation__comment-text");
     commentText.innerText = comment.comment;
+
+    const commentBtnWrap = document.createElement("div");
+    commentBtnWrap.classList.add ("conversation__btn-wrap");
+
+    const commentBtnLike = document.createElement("button");
+    commentBtnLike.classList.add ("conversation__button");
+    commentBtnLike.classList.add ("conversation__button--like");
+
+    const commentBtnDelete = document.createElement("button");
+    commentBtnDelete.classList.add ("conversation__button");
+    commentBtnDelete.classList.add ("conversation__button--delete");
+    
 // append created elements to ul
     commentItem.appendChild(commentDivImg);
+    commentBtnWrap.appendChild(commentBtnLike);
+    commentBtnWrap.appendChild(commentBtnDelete);
     commentDiv2.appendChild(commentName);
     commentDiv2.appendChild(commentDate);
     commentDiv1.appendChild(commentDiv2);
     commentDiv1.appendChild(commentText);
+    commentDiv1.appendChild(commentBtnWrap);
     commentItem.appendChild(commentDiv1);
     commentList.appendChild(commentItem);
 }

@@ -306,5 +306,23 @@
     }
     &__comment-text {
         @include mobile-text;
+        margin-bottom:0.5rem;
+    }
+
+    &__btn-wrap {
+        display:flex;
+        justify-content: space-between;
+    }
+    &__button {
+        padding:0.6rem;
+        border:none;
+        cursor:pointer;
+
+        &--like {
+            background: url("../assets/icons/SVG/icon-like.svg") no-repeat center;
+        }
+        &--delete {
+            background: url("../assets/icons/SVG/icon-delete.svg") no-repeat center;
+        }
     }
 }
