@@ -4,36 +4,6 @@ const commentForm = document.querySelector (".conversation__form"); //open the f
 const apiURL = "https://project-1-api.herokuapp.com";
 const apiKey = "6621de2c-5d7f-49e0-ad3e-6ba13f94538c";
 const target = "comments"
-// create an array with objects to push to and render to DOM
-const commentsArr = [];
-//add even listener to submit the new comment and push it to the array
-commentForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    commentList.innerText = '';    
-
-    const newCommentEntry = {
-        name: event.target.name.value,
-        comment: event.target.comment.value,
-        timestamp: Date.now()
-    }
-    commentsArr.push(newCommentEntry);
-    
-    //sort comments by date
-    commentsArr.sort((a,b) => new Date (b.date) - new Date (a.date));
-
-    clearComments(commentList);
-    event.target.reset(); //clears the form
-
-    for (let i =0; i < 3; i++) {
-        displayComment(commentsArr[i]);
-    }
-});
-// create a function to clear comments
-function clearComments (parent) {
-    while (parent.firstChild) {
-        parent.removeChild(parent.firstChild);
-    }
-}
 //use a function for a better date format that uses date object as an input and returns a string aka time that passed since the date up to the current time
 function timeSince(date) {
     const seconds = Math.floor((new Date() - date) / 1000);
@@ -108,7 +78,11 @@ function getComments () {
     .then((response) => {
         console.log (response);
         const data = response.data;
-        commentList.innerHTM = "";
+
+        commentList.innerHTML = "";
+
+        data.sort((a,b) => new Date (b.timestamp) - new Date (a.timestamp))
+
         data.forEach ((comment) => {
             displayComment(comment);
         });
@@ -118,3 +92,25 @@ function getComments () {
     });
 }
 getComments ()
+//use axios to post data to the API 
+commentForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+  
+    const commentInfo = {
+      name: event.target.name.value,
+      comment: event.target.comment.value,
+    };
+
+    axios
+    .post(`${apiURL}/${target}?api_key=${apiKey}`, commentInfo)
+    .then((response) => {
+      getComments()
+
+      // clear the form after submission
+      event.target.name.value = "";
+      event.target.comment.value = "";
+    })
+    .catch((error) => {
+      console.log("error: ", error);
+    });
+});

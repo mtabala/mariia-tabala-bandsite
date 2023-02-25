@@ -1,67 +1,8 @@
-// create an array with objects
-const showsInfo = [
-    {
-    subheader1: "date",
-    subheader2: "venue",
-    subheader3: "location",
-    date: "Mon Sept 06 2021",
-    venue: "Ronald Lane",
-    location: "San Francisco, CA",
-    button: "Buy Tickets"
-    },
-    
-    {
-    subheader1: "date",
-    subheader2: "venue",
-    subheader3: "location",
-    date: "Tue Sept 21 2021",
-    venue: "Pier 3 East",
-    location: "San Francisco, CA",
-    button: "Buy Tickets"
-    },
-    
-    {
-    subheader1: "date",
-    subheader2: "venue",
-    subheader3: "location",
-    date: "Fri Oct 15 2021",
-    venue: "View Lounge",
-    location: "San Francisco, CA",
-    button: "Buy Tickets"
-    },
-    
-    {
-    subheader1: "date",
-    subheader2: "venue",
-    subheader3: "location",
-    date: "Sat Nov 06 2021",
-    venue: "Hyatt Agency",
-    location: "San Francisco, CA",
-    button: "Buy Tickets"
-    },
-    
-    {
-    subheader1: "date",
-    subheader2: "venue",
-    subheader3: "location",
-    date: "Fri Nov 26 2021",
-    venue: "Moscow Center",
-    location: "San Francisco, CA",
-    button: "Buy Tickets"
-    },
-    
-    {
-    subheader1: "date",
-    subheader2: "venue",
-    subheader3: "location",
-    date: "Wed Dec 15 2021",
-    venue: "Press Club",
-    location: "San Francisco, CA",
-    button: "Buy Tickets"
-    },
-]
-//open the UL in JS
+//get DOM elements to work with
 const showsList = document.querySelector(".shows__list"); 
+const apiURL = "https://project-1-api.herokuapp.com";
+const apiKey = "6621de2c-5d7f-49e0-ad3e-6ba13f94538c";
+const target = "showdates"
 //create new elements inside the UL
 function createList (list) {
     const showsItem = document.createElement ("li");
@@ -72,24 +13,25 @@ function createList (list) {
 
     const showsSubheader1 = document.createElement ("p");
 	showsSubheader1.classList.add ("shows__subheader")
-	showsSubheader1.innerText = list.subheader1;
+	showsSubheader1.innerText = "DATE";
 
     const showsDate = document.createElement ("p");
+    const dateObj = new Date (list.date);
 	showsDate.classList.add ("shows__text");
 	showsDate.classList.add ("shows__text--date");
-	showsDate.innerText = list.date;
+	showsDate.innerText = dateObj.toDateString();
 
     const showsSubheader2 = document.createElement ("p");
 	showsSubheader2.classList.add ("shows__subheader")
-	showsSubheader2.innerText = list.subheader2;
+	showsSubheader2.innerText = "VENUE";
 
     const showsVenue = document.createElement ("p");
 	showsVenue.classList.add ("shows__text");
-	showsVenue.innerText = list.venue;
+	showsVenue.innerText = list.place;
 
     const showsSubheader3 = document.createElement ("p");
 	showsSubheader3.classList.add ("shows__subheader")
-	showsSubheader3.innerText = list.subheader3;
+	showsSubheader3.innerText = "LOCATION";
 
     const showsLocation = document.createElement ("p");
 	showsLocation.classList.add ("shows__text");
@@ -97,7 +39,7 @@ function createList (list) {
 
     const showsButton = document.createElement ("a");
 	showsButton.classList.add ("shows__button");
-	showsButton.innerText = list.button;
+	showsButton.innerText = "BUY TICKET";
 
 // append created elements to ul
     showsDiv.appendChild(showsSubheader1);
@@ -117,6 +59,27 @@ function createList (list) {
     });
 }
 // loop through each object in the array 
-for (let i = 0; i < showsInfo.length; i++) {
-    createList(showsInfo[i]);
+// for (let i = 0; i < showsInfo.length; i++) {
+//     createList(showsInfo[i]);
+// }
+//use axios to fetch data from the API 
+function getShowList () {
+    axios
+    .get(`${apiURL}/${target}?api_key=${apiKey}`)
+    .then((response) => {
+        console.log (response);
+        const data = response.data;
+
+        showsList.innerHTML = "";
+
+        data.sort((a,b) => new Date (b.timestamp) - new Date (a.timestamp))
+
+        data.forEach ((list) => {
+            createList(list);
+        });
+    })
+    .catch((error) => {
+      console.log("error: ", error);
+    });
 }
+getShowList ()
