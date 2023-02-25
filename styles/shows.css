@@ -548,6 +548,7 @@
   text-transform: uppercase;
   padding: 0.8rem 2rem 0.6rem;
   border-radius: 5px;
+  cursor: pointer;
 }
 .shows__button:hover {
   background-color: #000000;

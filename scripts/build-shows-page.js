@@ -58,10 +58,6 @@ function createList (list) {
         event.currentTarget.classList.add ("shows__item--selected"); 
     });
 }
-// loop through each object in the array 
-// for (let i = 0; i < showsInfo.length; i++) {
-//     createList(showsInfo[i]);
-// }
 //use axios to fetch data from the API 
 function getShowList () {
     axios

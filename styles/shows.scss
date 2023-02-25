@@ -171,6 +171,7 @@
         text-transform: uppercase;
         padding:0.8rem 2rem 0.6rem;
         border-radius: 5px;
+        cursor:pointer;
         &:hover {
             background-color: $heading-secondary;
         }
