@@ -213,6 +213,10 @@
         object-position:30% 60%;
         border-radius:50%;
         background-color: $font-secondary;
+
+        &:hover {
+            transform: scale(1.1);
+          }
     }
 
     &__form {
@@ -243,6 +247,7 @@
         }
 
         &--comment {
+            resize:none;
             height:7rem;
         }
         @include tablet {
@@ -274,7 +279,7 @@
             padding:0 3rem;
         }
         @include desktop {
-            margin:0rem 18.5rem;
+            margin:0rem 18.7rem;
             padding:0;
         }
     }
