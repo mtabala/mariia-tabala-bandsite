@@ -215,7 +215,7 @@
         background-color: $font-secondary;
 
         &:hover {
-            transform: scale(1.1);
+            transform: scale(1.5);
           }
     }
 
@@ -224,6 +224,10 @@
         flex-direction: column;
         width:100%;
         max-width:80%;
+
+    input.invalid, textarea.invalid {
+            border-color: red;
+          }
     }
 
     &__title {
@@ -324,5 +328,13 @@
         &--delete {
             background: url("../assets/icons/SVG/icon-delete.svg") no-repeat center;
         }
+    }
+    &__btn-like-wrap {
+        display:flex;
+    }
+    &__likes {
+        padding: 0.5rem 0 0 0.3rem;
+        font-size:0.87rem;
+        font-weight:600;
     }
 }

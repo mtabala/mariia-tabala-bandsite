@@ -1,7 +1,7 @@
 //get DOM elements to work with
 const showsList = document.querySelector(".shows__list"); 
 const apiURL = "https://project-1-api.herokuapp.com";
-const apiKey = "6621de2c-5d7f-49e0-ad3e-6ba13f94538c";
+const apiKey = "72d05541-4135-49b5-b1b2-880a28baad10";
 const target = "showdates"
 //create new elements inside the UL
 function createList (list) {
@@ -13,7 +13,7 @@ function createList (list) {
 
     const showsSubheader1 = document.createElement ("p");
 	showsSubheader1.classList.add ("shows__subheader")
-	showsSubheader1.innerText = "DATE";
+	showsSubheader1.innerText = "date";
 
     const showsDate = document.createElement ("p");
     const dateObj = new Date (list.date);
@@ -23,7 +23,7 @@ function createList (list) {
 
     const showsSubheader2 = document.createElement ("p");
 	showsSubheader2.classList.add ("shows__subheader")
-	showsSubheader2.innerText = "VENUE";
+	showsSubheader2.innerText = "venue";
 
     const showsVenue = document.createElement ("p");
 	showsVenue.classList.add ("shows__text");
@@ -31,7 +31,7 @@ function createList (list) {
 
     const showsSubheader3 = document.createElement ("p");
 	showsSubheader3.classList.add ("shows__subheader")
-	showsSubheader3.innerText = "LOCATION";
+	showsSubheader3.innerText = "location";
 
     const showsLocation = document.createElement ("p");
 	showsLocation.classList.add ("shows__text");
@@ -39,7 +39,7 @@ function createList (list) {
 
     const showsButton = document.createElement ("a");
 	showsButton.classList.add ("shows__button");
-	showsButton.innerText = "BUY TICKET";
+	showsButton.innerText = "buy ticket";
 
 // append created elements to ul
     showsDiv.appendChild(showsSubheader1);
